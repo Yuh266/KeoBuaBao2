@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        form {
+            text-align: center;
+            padding-top: 200px;
+        }
+        form input {
+            width: 150px ;
+            height: 40px;
+            color: red;
+        }
+        .anh {
+            text-align: center ;
+        }
+        .Paper {
+            margin: 0 40px ;
+        }
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+    <form action="">
+        <input type="button" value="Rock" onclick="getValue(0);"/>
+        <input type="button" value="Paper" onclick="getValue(1);"/>
+        <input type="button" value="Scissors" onclick="getValue(2);"/>
+        
+    </form>
+    <div class="anh">
+        <img src="img/Búa.PNG" alt="">
+        <img class="Paper" src="img/Bao.PNG" alt="">
+        <img src="img/Kéo.PNG" alt="">
+
+    </div>
+    
+    <script>
+        var arr = ['Rock','Paper','Scissors'];
+        var h = null ;
+        var s = Math.floor(Math.random()*3);
+        function Thu_lai(){
+            var check= confirm("Bạn có muốn thử lại lần nữa ko tôi sẽ không thay đổi đáp án của mik.")
+            if(check == false){
+                alert("Máy chọn: "+arr[s]+"\nBạn chọn: "+arr[h])
+                s = Math.floor(Math.random()*3);
+            }
+        }
+        function getValue(x){
+            h = x;
+            switch(s){
+                case 0:
+                    if(x==0){
+                
+                        alert("Hòa.")
+                    }else if(x==1){
+                        alert("Bạn thắng.")
+                    }else {
+                        alert("Máy thắng.")
+                    }
+                    Thu_lai();
+                    break;
+                case 1:
+                    if(x==1){
+                        alert("Hòa.")
+                    }else if(x==2){
+                        alert("Bạn thắng.")
+                    }else {
+                        alert("Máy thắng.")
+                    }
+                    Thu_lai();
+                    break;
+                case 2:
+                    if(x==2){
+                        alert("Hòa.")
+                    }else if(x==0){
+                        alert("Bạn thắng.")
+                    }else {
+                        alert("Máy thắng.")
+                    }
+                    Thu_lai();
+                    break;
+                default:
+
+                    break;
+            }
+        }
+
+    </script>
+
+</body>
+</html>
